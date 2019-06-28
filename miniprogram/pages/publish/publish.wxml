@@ -1,0 +1,53 @@
+<!-- <import src="../../common/templates/mm-radio.wxml" /> -->
+<import src="../../common/template/mm-tips.wxml" />
+<!-- <import src="../../common/template/address-picker.wxml" /> -->
+<view>
+    <form name="publishForm" novalidate>
+        <view class="form-edit">
+	        <view class="form-view">
+	            <text>活动名称</text>
+	            <input name="title" maxlength="15" placeholder="请输入活动名称" placeholder-style="color: #A0A0A0" value="{{title}}" bindinput="titleInput" />
+	        </view>
+			<view class="form-view">
+	            <text>活动状态</text>
+	            <input name="status"  placeholder="请选择活动状态" placeholder-style="color: #A0A0A0" value="{{status}}" bindinput="statusInput" />
+	        </view>
+			<view class="form-view">
+	            <text>活动地点</text>
+	            <input name="address" maxlength="30" placeholder="请输入活动地址" placeholder-style="color: #A0A0A0" value="{{address}}" bindinput="addressInput" />
+	        </view>
+			<view class="form-view">
+	            <text>开始日期</text>
+	            <input name="startDate"  placeholder="请输入开始时间" placeholder-style="color: #A0A0A0" value="{{startDate}}" bindinput="startDateInput" />
+	        </view>
+			<view class="form-view">
+	            <text>结束日期</text>
+	            <input name="endDate" placeholder="请输入结束时间" placeholder-style="color: #A0A0A0" value="{{endDate}}" bindinput="endDateInput" />
+	        </view>
+			<view class="form-view">
+	            <text>描述</text>
+	            <input name="description" maxlength="100" placeholder="请输入描述" placeholder-style="color: #A0A0A0"  value="{{description}}" bindinput="descriptionInput" />
+	        </view>
+			<view class="form-view">
+	            <text>人数上限</text>
+	            <input name="numberLimit" maxlength="5" placeholder="请输入人数上线" placeholder-style="color: #A0A0A0"  value="{{numberLimit}}" bindinput="numberLimitInput" />
+	        </view>
+
+
+	    </view>
+
+	   	<!-- <view class="operation">
+	   		<template is="mm-radio" data="{{...items}}"></template>
+	    </view> -->
+	   	<view class="btnBox">
+	    	<button class="submit-btn" bindtap="submitBtn">
+	        	<text>发布活动</text>
+	    	</button>
+	    </view>
+    </form>
+</view>
+
+<view mm-loading-animation ng-if="loading"></view>
+
+<!-- <template is="city" data="{{...array}}"></template> -->
+<template is="mm-tips" data="{{...tipsData}}"></template>
